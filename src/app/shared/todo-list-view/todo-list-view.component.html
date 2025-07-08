@@ -4,13 +4,15 @@
 
     <mat-divider></mat-divider>
 
-    <mat-list-item *ngFor="let todoItem of list.todo; let i = index">
-      <mat-checkbox #checkbox
-                    color="primary"
-                    (change)="onCompleteItem$.next([i, checkbox])">
-        {{todoItem}}
-      </mat-checkbox>
-    </mat-list-item>
+    @for (todoItem of list.todo; track todoItem; let i = $index) {
+      <mat-list-item>
+        <mat-checkbox #checkbox
+          color="primary"
+          (change)="onCompleteItem$.next([i, checkbox])">
+          {{todoItem}}
+        </mat-checkbox>
+      </mat-list-item>
+    }
   </mat-list>
 
   <mat-form-field class="mat-inline-label" id="add-task-form-field">
@@ -21,17 +23,19 @@
            (keydown.enter)="onAddTask$.next(addTaskInput.value); addTaskInput.value = ''">
   </mat-form-field>
 
-  <mat-accordion id="completed-items-accordion" 
-                 [hidden]="!list.completed || list.completed.length === 0" 
-                 [@.disabled]="true">
+  <mat-accordion id="completed-items-accordion"
+    [hidden]="!list.completed || list.completed.length === 0"
+    [@.disabled]="true">
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>Completed tasks</mat-panel-title>
       </mat-expansion-panel-header>
       <mat-list>
-        <mat-list-item *ngFor="let completedItem of list.completed">
+        @for (completedItem of list.completed; track completedItem) {
+          <mat-list-item>
             <mat-checkbox color="primary" [checked]="true" [disabled]="true">{{completedItem}}</mat-checkbox>
-        </mat-list-item>
+          </mat-list-item>
+        }
       </mat-list>
     </mat-expansion-panel>
   </mat-accordion>

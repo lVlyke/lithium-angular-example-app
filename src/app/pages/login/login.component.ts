@@ -1,5 +1,4 @@
 import { Component, ChangeDetectorRef, ChangeDetectionStrategy, Injector } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
@@ -19,7 +18,6 @@ import { EntryBasePage } from '../base/entry/entry-base-page';
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
     imports: [
-        CommonModule,
         FormsModule,
         RouterModule,
         MatCardModule,

@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef, Injector } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -17,7 +16,6 @@ import { BaseComponent } from '../../../core/base-component';
     templateUrl: './help-dialog.component.html',
     styleUrls: ['./help-dialog.component.scss'],
     imports: [
-        CommonModule,
         FormsModule,
         MatDialogModule,
         MatListModule,

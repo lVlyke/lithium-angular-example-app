@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import { Component, Input, Output, ChangeDetectionStrategy, ChangeDetectorRef, Injector, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -16,7 +15,6 @@ import { BaseComponent } from '../../core/base-component';
     templateUrl: './todo-list-view.component.html',
     styleUrls: ['./todo-list-view.component.scss'],
     imports: [
-        CommonModule,
         MatListModule,
         MatCheckboxModule,
         MatFormFieldModule,

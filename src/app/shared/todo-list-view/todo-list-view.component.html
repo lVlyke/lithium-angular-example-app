@@ -4,7 +4,7 @@
 
     <mat-divider></mat-divider>
 
-    @for (todoItem of list.todo; track todoItem; let i = $index) {
+    @for (todoItem of list.todo; track $index; let i = $index) {
       <mat-list-item>
         <mat-checkbox #checkbox
           color="primary"
@@ -31,7 +31,7 @@
         <mat-panel-title>Completed tasks</mat-panel-title>
       </mat-expansion-panel-header>
       <mat-list>
-        @for (completedItem of list.completed; track completedItem) {
+        @for (completedItem of list.completed; track $index) {
           <mat-list-item>
             <mat-checkbox color="primary" [checked]="true" [disabled]="true">{{completedItem}}</mat-checkbox>
           </mat-list-item>
